@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>datgui</title>
+    <script type="text/javascript" src="dat.gui.js"></script>
+</head>
+
+<body>
+    <h1 id="content">boom</h1>
+</body>
+
+</html>
+
+<script type="text/javascript">
+    var FizzyText = function () {
+        this.message = 'dat.gui';
+        this.speed = 0.8;
+        this.hint = 'H to hide me';
+    };
+
+    var text = new FizzyText();
+    var gui = new dat.GUI();
+    gui.add(text, 'message');
+    gui.add(text, 'hint');
+    var speed =  gui.add(text, 'speed', -100, 100);
+
+    speed.onChange(function (value) {
+        document.getElementById("content").innerHTML = parseInt(value);
+    });
+
+</script>

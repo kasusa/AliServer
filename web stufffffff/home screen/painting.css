@@ -1,0 +1,47 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    }
+
+    * {
+    box-sizing: border-box;
+    }
+.bg-image {
+    height: 100%;
+    /* width: 2000px; */
+    /* The image used */
+    background-image: url("painting.jpg");
+
+    /* Add the blur effect */
+    filter: blur(8px);
+    -webkit-filter: blur(8px);
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.centered {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    /* bring your own prefixes */
+    transform: translate(-50%, -50%);
+}
+
+.frame {
+    border-width: 29px;
+    border-style: groove;
+    border-color: rgb(109, 109, 109) rgb(117, 117, 117) rgba(0, 0, 0) rgb(69, 69, 69);
+}
+
+.shadow {
+    box-shadow: 1px 0px 5px 3px #07c0ffed;
+    
+}
+
+/* dat gui 不显示s */
+.close-bottom{
+    opacity: 0%;
+}

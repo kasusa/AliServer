@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript" src="dat.gui.js"></script>
+    <script type="text/javascript" src="control.js"></script>
+    <link rel="stylesheet" type="text/css" href="painting.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Painting</title>
+</head>
+
+
+<body>
+<div class="bg-image"></div>
+
+<style>
+img{
+    width:35%;
+}
+</style>
+
+    <img id="art" class="shadow centered frame" src="painting.jpg" alt="sea!" >
+
+<p id="content"></p>
+</body>
+
+</html>
+
+<script>
+//加入 dat gui
+var text = new FizzyText();
+var gui = new dat.GUI();
+
+//可以调整“相框”相的大小 百分比设置，范围15-70
+var pictureSize = gui.add(text, 'pictureSize',15,70);
+pictureSize.onChange(function (value) {
+    let art_size =  value + '%'
+    document.getElementById("art").style.width =art_size;
+});
+
+//可以调整“相框”框的大小
+var frameSize = gui.add(text, 'frameSize',0,150);
+frameSize.onChange(function (value) {
+    let art_size =  value + 'px';
+    document.getElementById("art").style.borderWidth = art_size;
+});
+
+//可以调整“相框”的颜色
+var colorFrame = gui.addColor(text, 'colorFrame',0,150);
+colorFrame.onChange(function (value) {
+    let art_size = value;
+    document.getElementById("art").style.borderColor = art_size;
+    // document.getElementById("content").innerHTML = art_size;
+
+});
+
+//可以关闭背景气氛光
+var shadowOn = gui.add(text, 'shadowOn');
+shadowOn.onChange(function (value) {
+    let art_size = '1px 0px 5px 3px '+text.colorShadow;
+
+    if(!value)
+        document.getElementById("art").style.boxShadow = "none";    
+    else
+        document.getElementById("art").style.boxShadow = art_size;
+});
+
+//可以调整背景气氛光 -- 颜色
+var colorShadow = gui.addColor(text, 'colorShadow',0,150);
+colorShadow.onChange(function (value) {
+    let art_size = '1px 0px 5px 3px '+value;
+    document.getElementById("art").style.boxShadow = art_size;
+    // document.getElementById("content").innerHTML = art_size;
+
+});
+
+
+
+//提示
+gui.add(text, 'hint');
+
+</script>
