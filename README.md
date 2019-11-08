@@ -15,7 +15,7 @@ AliServer
 * [在阿里云上安装MySQL并配置远程连接](https://blog.csdn.net/ldx19980108/article/details/80343904)
 * nigix.conf
 `/etc/nginx`
-```
+```conf
 events { }
 http {
  server {
@@ -27,3 +27,5 @@ http {
  }      
 }
 ```
+
+放完网页之后要给所有的网页文件chmod 777权限。
