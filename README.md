@@ -16,6 +16,7 @@ AliServer
 在配置`mysql`需要注意这个`my.cnf `文件位置不同(和教程中):
 ![image.png](http://ww1.sinaimg.cn/large/0083vuQJly1gdvr5xd8bbj30es0ccq3s.jpg)
 
+改完之后还要重启一下服务器,按理说重启mysql服务就的,但是,,我不会.
 * nigix.conf
 `/etc/nginx`
 ```conf
