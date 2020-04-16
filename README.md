@@ -13,6 +13,9 @@ AliServer
 
 # 教程
 * [在阿里云上安装MySQL并配置远程连接](https://blog.csdn.net/ldx19980108/article/details/80343904)
+在配置`mysql`需要注意这个`my.cnf `文件位置不同(和教程中):
+![image.png](http://ww1.sinaimg.cn/large/0083vuQJly1gdvr5xd8bbj30es0ccq3s.jpg)
+
 * nigix.conf
 `/etc/nginx`
 ```conf
